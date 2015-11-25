@@ -1,4 +1,4 @@
-package massbalance
+package equations.massbalance
 
 /**
  * Created by kasonchan on 11/24/15.

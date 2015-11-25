@@ -1,6 +1,6 @@
-package massbalance
+package equations.massbalance
 
-import massbalance.MassBalance._
+import equations.massbalance.MassBalance._
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
