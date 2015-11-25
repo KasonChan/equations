@@ -1,4 +1,4 @@
-val name = "massbalance"
+val name = "equations"
 
 lazy val buildSettings = Seq(
   version := "0.1.0-SNAPSHOT",
@@ -38,13 +38,13 @@ lazy val publishSettings = Seq(
   },
   publishArtifact in Test := false,
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  homepage := Some(url("https://github.com/KasonChan/wastewatertreatment")),
+  homepage := Some(url("https://github.com/KasonChan/equations")),
   autoAPIMappings := true,
-  apiURL := Some(url("https://kasonchan.github.io/massbalance/docs")),
+  apiURL := Some(url("https://kasonchan.github.io/equations/docs")),
   scmInfo := Some(
     ScmInfo(
-      url("https://github.com/KasonChan/massbalance"),
-      "scm:git:git@github.com:KasonChan/massbalance.git"
+      url("https://github.com/KasonChan/equations"),
+      "scm:git:git@github.com:KasonChan/equations.git"
     )
   ),
   pomExtra :=
@@ -67,10 +67,10 @@ lazy val allSettings = baseSettings ++ buildSettings ++ publishSettings
 
 lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Seq(
   site.addMappingsToSiteDir(mappings in(ScalaUnidoc, packageDoc), "docs"),
-  git.remoteRepo := s"git@github.com:KasonChan/wastewatertreatment.git"
+  git.remoteRepo := s"git@github.com:KasonChan/equations.git"
 )
 
-lazy val massbalance = project.in(file("."))
+lazy val equations = project.in(file("."))
   .settings(moduleName := name)
   .settings(allSettings: _*)
   .settings(docSettings: _*)
