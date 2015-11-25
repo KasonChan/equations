@@ -1,11 +1,12 @@
 package massbalance
 
+import massbalance.MassBalance._
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * Created by kasonchan on 11/24/15.
  */
-class MassBalanceSuite extends FlatSpec with Matchers with MassBalance {
+class MassBalanceSuite extends FlatSpec with Matchers {
 
   "MX(Some(1), Some(2))" should "MX(1), Some(2), None)" in {
     MX(Some(1), Some(2)) shouldBe MX(Some(1), Some(2), None)

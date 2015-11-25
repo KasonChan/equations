@@ -19,6 +19,10 @@ val akkaStreamV = "1.0"
 
 val baseSettings = Seq(
   libraryDependencies ++= testDependencies.map(_ % "test"),
+  resolvers ++= Seq(
+    Resolver.sonatypeRepo("releases"),
+    Resolver.sonatypeRepo("snapshots")
+  ),
   scalacOptions in(Compile, console) := compilerOptions
 )
 
