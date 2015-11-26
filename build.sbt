@@ -78,11 +78,18 @@ lazy val equations = project.in(file("."))
   .settings(
     libraryDependencies ++= testDependencies
   )
-  .aggregate(massbalance)
-  .dependsOn(massbalance)
+  .aggregate(massbalance, monooperation)
+  .dependsOn(massbalance, monooperation)
 
 lazy val massbalance = project
   .settings(moduleName := name + "-" + "massbalance")
+  .settings(allSettings: _*)
+  .settings(
+    libraryDependencies ++= testDependencies
+  )
+
+lazy val monooperation = project
+  .settings(moduleName := name + "-" + "monooperation")
   .settings(allSettings: _*)
   .settings(
     libraryDependencies ++= testDependencies
