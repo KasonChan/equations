@@ -43,6 +43,34 @@ trait MonoOperation {
     x / y
   }
 
+
+  def groupM(puts: List[Option[Double]],
+             operation: List[Option[Double]] => Double):
+  Either[Option[Double], (Option[Double], Option[Double])] = {
+    val spanned = puts match {
+      case List() => None
+      case l: List[Option[Double]] =>
+        val r = l partition {
+          m => !m.isDefined
+        }
+        Some(r)
+      case _ => None
+    }
+
+    spanned match {
+      case None => Left(None)
+      case Some(x) => x match {
+        case (List(), t) => Left(Some(operation(t)))
+        case (h, t) =>
+          h.size match {
+            case 1 => Right(h.head, Some(operation(t)))
+            case _ => Left(None)
+          }
+      }
+      case _ => Left(None)
+    }
+  }
+
 }
 
 object MonoOperation extends MonoOperation
