@@ -1,7 +1,17 @@
 package equations.massbalance
 
 /**
- * Created by kasonchan on 11/24/15.
+ * A trait to represent a ''mass balance equation''.
+ *
+ * Specify the `variable` and `constant` when calling the solveMX function like this:
+ *
+ * {{{
+ * 10 * 20 + 5 * 40 = x * 15
+ * scala> inputs = List(MX(Some(10), Some(20)), MX(None, Some(40)))
+ * scala> outputs = List(MX(None, Some(15)))
+ * scala> solveMX(inputs, outputs)
+ * Some(26.7)
+ * }}}
  */
 trait MassBalance {
 
@@ -91,4 +101,17 @@ trait MassBalance {
 
 }
 
+/**
+ * A trait to represent a ''mass balance equation''.
+ *
+ * Specify the `variable` and `constant` when calling the solveMX function like this:
+ *
+ * {{{
+ * 10 * 20 + 5 * 40 = x * 15
+ * scala> inputs = List(MX(Some(10), Some(20)), MX(None, Some(40)))
+ * scala> outputs = List(MX(None, Some(15)))
+ * scala> solveMX(inputs, outputs)
+ * Some(26.7)
+ * }}}
+ */
 object MassBalance extends MassBalance

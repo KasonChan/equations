@@ -3,7 +3,7 @@ package equations.monooperation
 /**
  * A trait to represent a ''monooperation equation''.
  *
- * Specify the `unknown` and `variable` when calling the solveM function like this:
+ * Specify the `variable` and `constant` when calling the solveM function like this:
  *
  * {{{
  * x = 3 + 4
@@ -14,11 +14,6 @@ package equations.monooperation
  * scala> solveM(List(Some(25)), List(None, Some(5)), 'multiple)
  * Some(5.0)
  * }}}
- *
- * Did you know: The [[equations.monooperation.MonoOperation]] extends this trait.
- *
- * @author Kason Chan
- * @version 0.1
  */
 trait MonoOperation {
 
@@ -162,7 +157,7 @@ trait MonoOperation {
 /**
  * A companion object of trait MonoOperation to represent a ''monooperation equation''.
  *
- * Specify the `unknown` and `variable` when calling the solveM function like this:
+ * Specify the `variable` and `constant` when calling the solveM function like this:
  *
  * {{{
  * x = 3 + 4
@@ -173,8 +168,5 @@ trait MonoOperation {
  * scala> solveM(List(Some(25)), List(None, Some(5)), 'multiple)
  * Some(5.0)
  * }}}
- *
- * @author Kason Chan
- * @version 0.1
  */
 object MonoOperation extends MonoOperation
