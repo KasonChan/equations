@@ -23,7 +23,7 @@ Every Equations module is published at Maven Central. Use the following _sbt_ sn
 
 ```scala
 libraryDependencies ++= Seq(
-  "com.github.kasonchan" %% "[equations-module]" % "0.1.0"
+  "com.github.kasonchan" %% "[equations-module]" % "0.1.1"
 )
 ```
 
@@ -33,13 +33,13 @@ libraryDependencies ++= Seq(
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
-  "com.github.kasonchan" %% "[equations-module]" % "0.1.0-SNAPSHOT" changing()
+  "com.github.kasonchan" %% "[equations-module]" % "0.1.1-SNAPSHOT" changing()
 )
 ```
 
 ### Hello World ###
 
-This "Hello World!" example is built with the 0.1.0-SNAPSHOT version.
+This "Hello World!" example is built with the 0.1.1 version.
 
 ```
 import equations.massbalance.MassBalance._
