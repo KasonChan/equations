@@ -2,7 +2,7 @@ val name = "equations"
 
 lazy val buildSettings = Seq(
   organization := "com.github.kasonchan",
-  version := "0.1.0",
+  version := "0.1.1",
   scalaVersion := "2.11.7"
 )
 
@@ -75,7 +75,6 @@ lazy val equations = project.in(file("."))
   .settings(moduleName := name)
   .settings(allSettings: _*)
   .settings(docSettings: _*)
-  .settings(noPublish: _*)
   .settings(
     libraryDependencies ++= testDependencies
   )
