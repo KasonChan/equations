@@ -1,8 +1,8 @@
 val name = "equations"
 
 lazy val buildSettings = Seq(
-  organization := "com.github.kasonchan",
-  version := "0.1.1",
+  organization := "com.kasonchan",
+  version := "0.1.0",
   scalaVersion := "2.11.7"
 )
 
@@ -58,7 +58,7 @@ lazy val publishSettings = Seq(
     </developers>
 )
 
-lazy val noPublish = Seq(
+lazy val noPublishSettings = Seq(
   publish := {},
   publishLocal := {},
   publishArtifact := false

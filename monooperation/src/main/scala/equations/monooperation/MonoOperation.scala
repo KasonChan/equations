@@ -15,7 +15,7 @@ package equations.monooperation
  * Some(5.0)
  * }}}
  */
-trait MonoOperation {
+sealed trait MonoOperation {
 
   /**
    * Returns the sum of the list.

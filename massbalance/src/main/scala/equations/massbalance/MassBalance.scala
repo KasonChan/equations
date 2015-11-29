@@ -13,7 +13,7 @@ package equations.massbalance
  * Some(26.7)
  * }}}
  */
-trait MassBalance {
+sealed trait MassBalance {
 
   case class MX(M: Option[Double], X: Option[Double], Removal: Option[Double] = None)
 

@@ -1,8 +1,8 @@
 # Equations #
 
-[![Build Status](https://travis-ci.org/KasonChan/equations.svg?branch=master)](https://travis-ci.org/KasonChan/equations)
-[![codecov.io](https://codecov.io/github/KasonChan/equations/coverage.svg?branch=master)](https://codecov.io/github/KasonChan/equations?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/009397d800574d5c8ba2d2502258335f)](https://www.codacy.com/app/kasonl-chan/equations)
+[![Build Status](https://travis-ci.org/kasonchan/equations.svg?branch=master)](https://travis-ci.org/kasonchan/equations)
+[![codecov.io](https://codecov.io/github/kasonchan/equations/coverage.svg?branch=master)](https://codecov.io/github/kasonchan/equations?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/009397d800574d5c8ba2d2502258335f)](https://www.codacy.com/app/kasonchan/equations)
 
 Equations is a thin layer library for calculating one unknown equations. 
 Its mission is to provide the developers simple and robust API primitives 
@@ -23,7 +23,7 @@ Every Equations module is published at Maven Central. Use the following _sbt_ sn
 
 ```scala
 libraryDependencies ++= Seq(
-  "com.github.kasonchan" %% "[equations-module]" % "0.1.1"
+  "com.kasonchan" %% "[equations-module]" % "0.1.0"
 )
 ```
 
@@ -33,16 +33,25 @@ libraryDependencies ++= Seq(
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
-  "com.github.kasonchan" %% "[equations-module]" % "0.1.1-SNAPSHOT" changing()
+  "com.kasonchan" %% "[equations-module]" % "0.1.0-SNAPSHOT" changing()
 )
 ```
 
 ### Hello World ###
 
-This "Hello World!" example is built with the 0.1.1 version.
+This "Hello World!" example is built with the 0.1.0 version.
 
 ```
 import equations.massbalance.MassBalance._
+
+// 10 * 20 + 5 * 40 = x * 15
+svala> val inputs = List(MX(Some(10), Some(20)), MX(None, Some(40)))
+scala> val outputs = List(MX(None, Some(15)))
+scala> solveMX(inputs, outputs)
+Some(26.7)
+```
+
+```
 import equations.monooperation.MonoOperation._
 
 // x = 3 + 4
@@ -52,12 +61,6 @@ Some(7.0)
 // 25 = x * 5
 scala> solveM(List(Some(25)), List(None, Some(5)), 'multiple)
 Some(5.0)
-
-// 10 * 20 + 5 * 40 = x * 15
-svala> val inputs = List(MX(Some(10), Some(20)), MX(None, Some(40)))
-scala> val outputs = List(MX(None, Some(15)))
-scala> solveMX(inputs, outputs)
-Some(26.7)
 ```
 
 ### Documentation ###
