@@ -114,9 +114,6 @@ sealed trait MonoOperation {
         case (Left(l), Right(r)) => r match {
           case (mx, grouped) =>
             mx match {
-              case Some(x) =>
-                val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
-                Some(result)
               case None =>
                 val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
                 Some(result)
@@ -126,9 +123,6 @@ sealed trait MonoOperation {
         case (Right(l), Left(r)) => l match {
           case (mx, grouped) =>
             mx match {
-              case Some(x) =>
-                val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
-                Some(result)
               case None =>
                 val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
                 Some(result)
