@@ -52,4 +52,60 @@ class SolveMSpec extends FlatSpec with Matchers {
     solveM(List(Some(3)), List(Some(3), None), 'lol) shouldBe None
   }
 
+  "Test 12" should "pass" in {
+    solveM(List(), List(), 'add) shouldBe None
+  }
+
+  "Test 13" should "pass" in {
+    solveM(List(), List(), 'multiple) shouldBe None
+  }
+
+  "Test 14" should "pass" in {
+    solveM(List(Some(1)), List(Some(1)), 'add) shouldBe None
+  }
+
+  "Test 15" should "pass" in {
+    solveM(List(None), List(None), 'add) shouldBe None
+  }
+
+  "Test 16" should "pass" in {
+    solveM(List(None, Some(1)), List(None, Some(1)), 'add) shouldBe None
+  }
+
+  "Test 17" should "pass" in {
+    solveM(List(None, Some(1), None), List(None, Some(1), None), 'add) shouldBe None
+  }
+
+  "Test 18" should "pass" in {
+    solveM(List(Some(1)), List(Some(1)), 'multiple) shouldBe None
+  }
+
+  "Test 19" should "pass" in {
+    solveM(List(None), List(None), 'multiple) shouldBe None
+  }
+
+  "Test 20" should "pass" in {
+    solveM(List(None, Some(1)), List(None, Some(1)), 'multiple) shouldBe None
+  }
+
+  "Test 21" should "pass" in {
+    solveM(List(None, Some(1), None), List(None, Some(1), None), 'multiple) shouldBe None
+  }
+
+  "Test 22" should "pass" in {
+    solveM(List(Some(1), Some(2), Some(3)), List(Some(1), Some(2), Some(3)), 'add) shouldBe None
+  }
+
+  "Test 23" should "pass" in {
+    solveM(List(Some(1), Some(2), Some(3)), List(Some(1), Some(2), Some(3)), 'multiple) shouldBe None
+  }
+
+  "Test 24" should "pass" in {
+    solveM(List(Some(1), Some(2), Some(3), None), List(Some(1), Some(2), Some(3), None), 'add) shouldBe None
+  }
+
+  "Test 25" should "pass" in {
+    solveM(List(Some(1), Some(2), Some(3), None), List(Some(1), Some(2), Some(3), None), 'multiple) shouldBe None
+  }
+
 }
