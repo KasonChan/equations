@@ -55,7 +55,13 @@
 scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">20</span>)), MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">40</span>)))
 scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">15</span>)))
 scala&gt; solveMX(inputs, outputs)
-<span class="std">Some</span>(<span class="num">26.7</span>)</pre></div><div class="toggleContainer block">
+<span class="std">Some</span>(<span class="num">26.7</span>)
+
+<span class="num">50</span> * <span class="num">10</span> * (<span class="num">100</span> - <span class="num">15</span>) / <span class="num">100</span> = y * <span class="num">25</span>
+scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">50</span>), <span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">15</span>)))
+scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">25</span>)))
+scala&gt; solveMX(inputs, outputs)
+<span class="std">Some</span>(<span class="num">17</span>)</pre></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div><div class="toggleContainer block">
@@ -99,7 +105,7 @@ scala&gt; solveMX(inputs, outputs)
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="equations.massbalance.MassBalance.MX" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="equations.massbalance.MassBalance.MX" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="MXextendsProductwithSerializable"></a>
       <a id="MX:MX"></a>
       <h4 class="signature">
@@ -115,7 +121,7 @@ scala&gt; solveMX(inputs, outputs)
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">A case class to represent a flow, other constituents and removal percentage.</p><div class="fullcomment"><div class="comment cmt"><p>A case class to represent a flow, other constituents and removal percentage.</p></div><dl class="paramcmts block"><dt class="param">M</dt><dd class="cmt"><p>the value of flow.</p></dd><dt class="param">X</dt><dd class="cmt"><p>the value of other constituents.</p></dd><dt class="param">Removal</dt><dd class="cmt"><p>the value of removal percentage.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -288,26 +294,6 @@ scala&gt; solveMX(inputs, outputs)
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="equations.massbalance.MassBalance#groupMX" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="groupMX(puts:List[MassBalance.this.MX]):Either[Option[Double],(MassBalance.this.MX,Option[Double])]"></a>
-      <a id="groupMX(List[MX]):Either[Option[Double],(MX,Option[Double])]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">groupMX</span><span class="params">(<span name="puts">puts: <span class="extype" name="scala.List">List</span>[<a href="MassBalance$MX.html" class="extype" name="equations.massbalance.MassBalance.MX">MX</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], (<a href="MassBalance$MX.html" class="extype" name="equations.massbalance.MassBalance.MX">MX</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>])]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#equations.massbalance.MassBalance@groupMX(puts:List[MassBalance.this.MX]):Either[Option[Double],(MassBalance.this.MX,Option[Double])]" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Returns the tuple of mass balance with unknown and grouped sum of
-multiplication of the mass balances.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the tuple of mass balance with unknown and grouped sum of
-multiplication of the mass balances.
-Otherwise, returns 0.0.</p></div><dl class="paramcmts block"><dt class="param">puts</dt><dd class="cmt"><p>the list of mass balances.</p></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
@@ -342,23 +328,6 @@ Otherwise, returns 0.0.</p></div><dl class="paramcmts block"><dt class="param">p
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="equations.massbalance.MassBalance#multiplySum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="multiplySum(inputs:List[MassBalance.this.MX]):Double"></a>
-      <a id="multiplySum(List[MX]):Double"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">multiplySum</span><span class="params">(<span name="inputs">inputs: <span class="extype" name="scala.List">List</span>[<a href="MassBalance$MX.html" class="extype" name="equations.massbalance.MassBalance.MX">MX</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#equations.massbalance.MassBalance@multiplySum(inputs:List[MassBalance.this.MX]):Double" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Returns the sum of multiplication of the mass balances.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the sum of multiplication of the mass balances.</p></div><dl class="paramcmts block"><dt class="param">inputs</dt><dd class="cmt"><p>the list of mass balances.</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>

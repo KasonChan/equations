@@ -285,25 +285,6 @@ y is required to be &gt; 0.</p></div><dl class="paramcmts block"><dt class="para
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="equations.monooperation.MonoOperation#groupM" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="groupM(puts:List[Option[Double]],operation:List[Option[Double]]=&gt;Double):Either[Option[Double],(Option[Double],Option[Double])]"></a>
-      <a id="groupM(List[Option[Double]],(List[Option[Double]])⇒Double):Either[Option[Double],(Option[Double],Option[Double])]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">groupM</span><span class="params">(<span name="puts">puts: <span class="extype" name="scala.List">List</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>]]</span>, <span name="operation">operation: (<span class="extype" name="scala.List">List</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>]]) ⇒ <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>])]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#equations.monooperation.MonoOperation$@groupM(puts:List[Option[Double]],operation:List[Option[Double]]=&gt;Double):Either[Option[Double],(Option[Double],Option[Double])]" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Returns the Right with tuple of the unknown and operated result.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the Right with tuple of the unknown and operated result.
-Returns the Left with operated result.
-Otherwise, returns Left None.</p></div><dl class="paramcmts block"><dt class="param">puts</dt><dd class="cmt"><p>the list of inputs.</p></dd><dt class="param">operation</dt><dd class="cmt"><p>the operation is performed to the list of inputs.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MonoOperation.html" class="extype" name="equations.monooperation.MonoOperation">MonoOperation</a></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
@@ -424,24 +405,6 @@ Otherwise, returns Left None.</p></div><dl class="paramcmts block"><dt class="pa
     </span>
       <p class="shortcomment cmt">Returns Some result if the equation is valid.</p><div class="fullcomment"><div class="comment cmt"><p>Returns Some result if the equation is valid.
 Otherwise returns None.</p></div><dl class="paramcmts block"><dt class="param">inputs</dt><dd class="cmt"><p>the left hand side of the equation.</p></dd><dt class="param">outputs</dt><dd class="cmt"><p>the right hand side of the equation.</p></dd><dt class="param">operator</dt><dd class="cmt"><p>the operation is performed to the inputs and outputs.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MonoOperation.html" class="extype" name="equations.monooperation.MonoOperation">MonoOperation</a></dd></dl></div>
-    </li><li name="equations.monooperation.MonoOperation#solveMHelper" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="solveMHelper(tuple:(Either[Option[Double],(Option[Double],Option[Double])],Either[Option[Double],(Option[Double],Option[Double])]),operation:(Double,Double)=&gt;Double):Option[Double]"></a>
-      <a id="solveMHelper((Either[Option[Double],(Option[Double],Option[Double])],Either[Option[Double],(Option[Double],Option[Double])]),(Double,Double)⇒Double):Option[Double]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">solveMHelper</span><span class="params">(<span name="tuple">tuple: (<span class="extype" name="scala.Either">Either</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>])], <span class="extype" name="scala.Either">Either</span>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>], <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>])])</span>, <span name="operation">operation: (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#equations.monooperation.MonoOperation$@solveMHelper(tuple:(Either[Option[Double],(Option[Double],Option[Double])],Either[Option[Double],(Option[Double],Option[Double])]),operation:(Double,Double)=&gt;Double):Option[Double]" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Returns Some of result after valid operation.</p><div class="fullcomment"><div class="comment cmt"><p>Returns Some of result after valid operation.
-Otherwise returns None.</p></div><dl class="paramcmts block"><dt class="param">tuple</dt><dd class="cmt"><p>the tuple of grouped input and grouped output.</p></dd><dt class="param">operation</dt><dd class="cmt"><p>the operation is performed to the grouped tuple.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MonoOperation.html" class="extype" name="equations.monooperation.MonoOperation">MonoOperation</a></dd></dl></div>
     </li><li name="equations.monooperation.MonoOperation#subtract" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="subtract(x:Double,y:Double):Double"></a>
       <a id="subtract(Double,Double):Double"></a>

@@ -86,7 +86,13 @@
 scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">20</span>)), MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">40</span>)))
 scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">15</span>)))
 scala&gt; solveMX(inputs, outputs)
-<span class="std">Some</span>(<span class="num">26.7</span>)</pre></div></div>
+<span class="std">Some</span>(<span class="num">26.7</span>)
+
+<span class="num">50</span> * <span class="num">10</span> * (<span class="num">100</span> - <span class="num">15</span>) / <span class="num">100</span> = y * <span class="num">25</span>
+scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">50</span>), <span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">15</span>)))
+scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">25</span>)))
+scala&gt; solveMX(inputs, outputs)
+<span class="std">Some</span>(<span class="num">17</span>)</pre></div></div>
     </li></ol>
             </div>
 
@@ -110,11 +116,17 @@ scala&gt; solveMX(inputs, outputs)
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">A trait to represent a <i>mass balance equation</i>.</p><div class="fullcomment"><div class="comment cmt"><p>A trait to represent a <i>mass balance equation</i>.</p><p>Specify the <code>variable</code> and <code>constant</code> when calling the solveMX function like this:</p><pre><span class="num">10</span> * <span class="num">20</span> + <span class="num">5</span> * <span class="num">40</span> = x * <span class="num">15</span>
+      <p class="shortcomment cmt">A companion object to represent a <i>mass balance equation</i>.</p><div class="fullcomment"><div class="comment cmt"><p>A companion object to represent a <i>mass balance equation</i>.</p><p>Specify the <code>variable</code> and <code>constant</code> when calling the solveMX function like this:</p><pre><span class="num">10</span> * <span class="num">20</span> + <span class="num">5</span> * <span class="num">40</span> = x * <span class="num">15</span>
 scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">20</span>)), MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">40</span>)))
 scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">15</span>)))
 scala&gt; solveMX(inputs, outputs)
-<span class="std">Some</span>(<span class="num">26.7</span>)</pre></div></div>
+<span class="std">Some</span>(<span class="num">26.7</span>)
+
+<span class="num">50</span> * <span class="num">10</span> * (<span class="num">100</span> - <span class="num">15</span>) / <span class="num">100</span> = y * <span class="num">25</span>
+scala&gt; inputs = <span class="std">List</span>(MX(<span class="std">Some</span>(<span class="num">50</span>), <span class="std">Some</span>(<span class="num">10</span>), <span class="std">Some</span>(<span class="num">15</span>)))
+scala&gt; outputs = <span class="std">List</span>(MX(<span class="std">None</span>, <span class="std">Some</span>(<span class="num">25</span>)))
+scala&gt; solveMX(inputs, outputs)
+<span class="std">Some</span>(<span class="num">17</span>)</pre></div></div>
     </li></ol>
             </div>
 
