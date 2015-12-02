@@ -49,6 +49,12 @@ svala> val inputs = List(MX(Some(10), Some(20)), MX(None, Some(40)))
 scala> val outputs = List(MX(None, Some(15)))
 scala> solveMX(inputs, outputs)
 Some(26.7)
+
+// 50 * 10 * (100 - 15) / 100 = y * 25
+scala> inputs = List(MX(Some(50), Some(10), Some(15)))
+scala> outputs = List(MX(None, Some(25)))
+scala> solveMX(inputs, outputs)
+Some(17)
 ```
 
 ```
