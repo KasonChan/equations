@@ -108,4 +108,8 @@ class SolveMSpec extends FlatSpec with Matchers {
     solveM(List(Some(1), Some(2), Some(3), None), List(Some(1), Some(2), Some(3), None), 'multiple) shouldBe None
   }
 
+  "Test 26" should "pass" in {
+    solveM(List(Some(1), Some(2), Some(3), None), List(Some(1), Some(2), Some(3)), 'multiple) shouldBe Some(1.0)
+  }
+
 }
