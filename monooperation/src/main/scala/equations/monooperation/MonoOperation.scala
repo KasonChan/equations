@@ -56,80 +56,6 @@ sealed trait MonoOperation {
   }
 
   /**
-   * Returns the Right with tuple of the unknown and operated result.
-   * Returns the Left with operated result.
-   * Otherwise, returns Left None.
-   * @param puts the list of inputs.
-   * @param operation the operation is performed to the list of inputs.
-   */
-  def groupM(puts: List[Option[Double]],
-             operation: List[Option[Double]] => Double):
-  Either[Option[Double], (Option[Double], Option[Double])] = {
-    val spanned = puts match {
-      case List() => None
-      case l: List[Option[Double]] =>
-        val r = l partition {
-          m => !m.isDefined
-        }
-        Some(r)
-      case _ => None
-    }
-
-    spanned match {
-      case None => Left(None)
-      case Some(x) => x match {
-        case (List(), t) => Left(Some(operation(t)))
-        case (h, t) =>
-          h.size match {
-            case 1 => Right(h.head, Some(operation(t)))
-            case _ => Left(None)
-          }
-      }
-      case _ => Left(None)
-    }
-  }
-
-  /**
-   * Returns Some of result after valid operation.
-   * Otherwise returns None.
-   * @param tuple the tuple of grouped input and grouped output.
-   * @param operation the operation is performed to the grouped tuple.
-   */
-  def solveMHelper(tuple: (Either[Option[Double], (Option[Double], Option[Double])],
-    Either[Option[Double], (Option[Double], Option[Double])]),
-                   operation: (Double, Double) => Double): Option[Double] = {
-    tuple match {
-      case (Left(l), Left(r)) => None
-      case (Left(l), Right(r)) => r match {
-        case (mx, grouped) =>
-          mx match {
-            case Some(x) =>
-              val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
-              Some(result)
-            case None =>
-              val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
-              Some(result)
-            case _ => None
-          }
-      }
-      case (Right(l), Left(r)) => l match {
-        case (mx, grouped) =>
-          mx match {
-            case Some(x) =>
-              val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
-              Some(result)
-            case None =>
-              val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
-              Some(result)
-            case _ => None
-          }
-      }
-      case (Right(l), Right(r)) => None
-      case _ => None
-    }
-  }
-
-  /**
    * Returns Some result if the equation is valid.
    * Otherwise returns None.
    * @param inputs the left hand side of the equation.
@@ -139,6 +65,81 @@ sealed trait MonoOperation {
   def solveM(inputs: List[Option[Double]],
              outputs: List[Option[Double]],
              operator: Symbol): Option[Double] = {
+
+    /**
+     * Returns the Right with tuple of the unknown and operated result.
+     * Returns the Left with operated result.
+     * Otherwise, returns Left None.
+     * @param puts the list of inputs.
+     * @param operation the operation is performed to the list of inputs.
+     */
+    def groupM(puts: List[Option[Double]],
+               operation: List[Option[Double]] => Double):
+    Either[Option[Double], (Option[Double], Option[Double])] = {
+      val spanned = puts match {
+        case List() => None
+        case l: List[Option[Double]] =>
+          val r = l partition {
+            m => !m.isDefined
+          }
+          Some(r)
+        case _ => None
+      }
+
+      spanned match {
+        case None => Left(None)
+        case Some(x) => x match {
+          case (List(), t) => Left(Some(operation(t)))
+          case (h, t) =>
+            h.size match {
+              case 1 => Right(h.head, Some(operation(t)))
+              case _ => Left(None)
+            }
+        }
+        case _ => Left(None)
+      }
+    }
+
+    /**
+     * Returns Some of result after valid operation.
+     * Otherwise returns None.
+     * @param tuple the tuple of grouped input and grouped output.
+     * @param operation the operation is performed to the grouped tuple.
+     */
+    def solveMHelper(tuple: (Either[Option[Double], (Option[Double], Option[Double])],
+      Either[Option[Double], (Option[Double], Option[Double])]),
+                     operation: (Double, Double) => Double): Option[Double] = {
+      tuple match {
+        case (Left(l), Left(r)) => None
+        case (Left(l), Right(r)) => r match {
+          case (mx, grouped) =>
+            mx match {
+              case Some(x) =>
+                val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
+                Some(result)
+              case None =>
+                val result = operation(l.getOrElse(0.0), grouped.getOrElse(0.0))
+                Some(result)
+              case _ => None
+            }
+        }
+        case (Right(l), Left(r)) => l match {
+          case (mx, grouped) =>
+            mx match {
+              case Some(x) =>
+                val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
+                Some(result)
+              case None =>
+                val result = operation(r.getOrElse(0.0), grouped.getOrElse(0.0))
+                Some(result)
+              case _ => None
+            }
+        }
+        case (Right(l), Right(r)) => None
+        case _ => None
+      }
+    }
+
     operator match {
       case 'add =>
         val i = groupM(inputs, sumList)

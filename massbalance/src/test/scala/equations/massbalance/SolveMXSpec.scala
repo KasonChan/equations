@@ -57,4 +57,9 @@ class SolveMXSpec extends FlatSpec with Matchers {
       List(MX(None, Some(2)), MX(Some(1), Some(2)))) shouldBe None
   }
 
+  "Test 12" should "pass" in {
+    solveMX(List(MX(Some(50), Some(10), Some(15))),
+      List(MX(None, Some(25)))) shouldBe Some(17)
+  }
+
 }
